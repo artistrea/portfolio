@@ -18,7 +18,8 @@ export default {
         accent: "rgba(var(--rgb-accent), var(--tw-bg-opacity, 1))",
       },
       textColor: {
-        text: "rgba(var(--rgb-text), var(--tw-text-opacity, 1))",
+        normal: "rgba(var(--rgb-text), var(--tw-text-opacity, 0.7))",
+        highlight: "rgba(var(--rgb-text), var(--tw-text-opacity, 1))",
         background: "rgba(var(--rgb-background), var(--tw-text-opacity, 1))",
         primary: "rgba(var(--rgb-primary), var(--tw-text-opacity, 1))",
         secondary: "rgba(var(--rgb-secondary), var(--tw-text-opacity, 1))",
