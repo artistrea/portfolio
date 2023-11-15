@@ -1,0 +1,39 @@
+---
+import LanguageSelector from '../components/LanguageSelector.astro';
+import Section from '../components/Section.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<div class="w-full flex justify-end">
+		<LanguageSelector />
+	</div>
+	<Section>
+		<div slot="title">
+			<h1 class="text-4xl font-bold tracking-tight">Artur Padovesi Piratelli</h1>
+			<p>trabaio</p>
+		</div>
+		<main slot="content">
+			opa
+		</main>
+	</Section>
+</Layout>
+
+<style>
+	.main-grid {
+		display: grid;
+		--padding-inline: 15rem;
+		grid-template-columns: 
+			minmax(var(--padding-inline), 1fr)
+			[left-start] min(50% - var(--padding-inline)) [left-end] 0px
+			[right-start] min(50% - var(--padding-inline)) [right-end]
+			minmax(var(--padding-inline), 1fr);
+	}
+
+	.main-grid > :first-child {
+		grid-column: left;
+	}
+	.main-grid > :last-child {
+		grid-column: right;
+	}
+</style>
