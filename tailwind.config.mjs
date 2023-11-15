@@ -4,11 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        text: "var(--clr-text)",
-        background: "var(--clr-background)",
-        primary: "var(--clr-primary)",
-        secondary: "var(--clr-secondary)",
-        accent: "var(--clr-accent)",
+        text: "rgba(var(--rgb-text))",
+        background: "rgba(var(--rgb-background))",
+        primary: "rgba(var(--rgb-primary))",
+        secondary: "rgba(var(--rgb-secondary))",
+        accent: "rgba(var(--rgb-accent))",
+      },
+      backgroundColor: {
+        text: "rgba(var(--rgb-text), var(--tw-bg-opacity, 1))",
+        background: "rgba(var(--rgb-background), var(--tw-bg-opacity, 1))",
+        primary: "rgba(var(--rgb-primary), var(--tw-bg-opacity, 1))",
+        secondary: "rgba(var(--rgb-secondary), var(--tw-bg-opacity, 1))",
+        accent: "rgba(var(--rgb-accent), var(--tw-bg-opacity, 1))",
+      },
+      textColor: {
+        text: "rgba(var(--rgb-text), var(--tw-text-opacity, 1))",
+        background: "rgba(var(--rgb-background), var(--tw-text-opacity, 1))",
+        primary: "rgba(var(--rgb-primary), var(--tw-text-opacity, 1))",
+        secondary: "rgba(var(--rgb-secondary), var(--tw-text-opacity, 1))",
+        accent: "rgba(var(--rgb-accent), var(--tw-text-opacity, 1))",
       },
     },
   },
