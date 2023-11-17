@@ -1,0 +1,36 @@
+---
+import type { Experience } from '../info/experiences';
+import Content from './Content.astro';
+
+interface Props {
+	experiences: Experience[]
+}
+
+const { experiences } = Astro.props;
+---
+
+
+<ol class="max-w-[50ch] text-normal flex flex-col gap-4">
+    {experiences.map((x) => (
+        <li class="flex flex-col p-5 relative">
+            <div class="uppercase absolute right-full w-max text-xs font-bold tracking-wider text-primary">
+                {x.date.from} — {x.date.until ?? "present"}
+            </div>
+            <h3 class="text-highlight font-medium">
+                {x.role} · {x.at}
+            </h3>
+            <div class="mt-2">
+                <p class="text-sm tracking-wide">
+                    <Content content={x.description} />
+                </p>
+            </div>
+            <ul class="flex flex-wrap gap-2 mt-4">
+                {x.tags.map((t) => (
+                    <li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">
+                        {t}
+                    </li>
+                ))}
+            </ul>
+        </li>
+    ))}
+</ol>

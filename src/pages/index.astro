@@ -1,15 +1,18 @@
 ---
-import Image from 'astro/components/Image.astro';
+import { Image } from 'astro:assets';
 import LanguageSelector from '../components/LanguageSelector.astro';
 import Section from '../components/Section.astro';
 import Layout from '../layouts/Layout.astro';
 import foto_perfil from "../../public/foto_perfil.jpeg"
+import ExperienceCards from '../components/ExperienceCards.astro';
+
+import { experiences } from "../info/experiences"
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="w-full flex justify-end">
+	<!-- <div class="w-full flex justify-end">
 		<LanguageSelector />
-	</div>
+	</div> -->
 	<Section>
 		<div slot="title">
 			<h1 class="mb-2 text-4xl font-bold tracking-tight">Artur Padovesi Piratelli</h1>
@@ -24,9 +27,9 @@ import foto_perfil from "../../public/foto_perfil.jpeg"
 				</span>
 			</p>
 		</div>
-		<main slot="content" class="text-opacity-70 text-text grid lg:grid-cols-3 grid-cols-1 gap-1 mx-auto rounded-md z-0 relative">
+		<main slot="content" class="grid lg:grid-cols-3 grid-cols-1 gap-1 mx-auto rounded-md z-0 relative">
 			<div class="rounded-t-md lg:rounded-tr-none lg:col-span-2 row-span-2 bg-primary bg-opacity-20">
-				<p class="p-5 max-w-prose leading-[1.625] tracking-wide">
+				<p class="p-5 max-w-prose leading-[1.625] tracking-wide text-normal">
 					I'm a
 					<span class="text-highlight">
 						computer engineering student
@@ -35,45 +38,45 @@ import foto_perfil from "../../public/foto_perfil.jpeg"
 					<span class="text-highlight">
 						programming competitions.
 					</span>
-				<span class="block h-4"></span>
-				As the Projects Director at <a href="https://struct.unb.br" target="_blank" rel="noopener noreferrer" class="underline">Struct - Empresa Junior de Engenharia de Computação</a>, I've been working as a
-				<span class="text-highlight">
-					web developer
-				</span>
-				for
-				<span class="text-highlight">
-					over 2 years,
-				</span>
-				dedicating approximately 10-30 hours per week.
-				<span class="block h-4"></span>
-				
-				While my role differs from that of a Senior Enterprise, I've gained hands-on
-				<span class="text-highlight">
-					experience in client interactions, project management and deployment,
-				</span>
-				both internal and external. I've
-				<span class="text-highlight">
-					taken the lead
-				</span>
-				
-				on
-				<span class="text-highlight">
-					changing
-				</span>
-				our go-to tech
-				<span class="text-highlight">
-					stack
-				</span>
-				and template (from Rails to <a href="https://create.t3.gg/" target="_blank" rel="noopener noreferrer" class="underline">T3</a>) and in
-				<span class="text-highlight">
-					training
-				</span>
-				initiatives.
+					<span class="block h-4"></span>
+					As the Projects Director at <a href="https://struct.unb.br" target="_blank" rel="noopener noreferrer" class="underline">Struct - Empresa Junior de Engenharia de Computação</a>, I've been working as a
+					<span class="text-highlight">
+						web developer
+					</span>
+					for
+					<span class="text-highlight">
+						over 2 years,
+					</span>
+					dedicating approximately 10-30 hours per week.
+					<span class="block h-4"></span>
+					
+					While my role differs from that of a Senior Enterprise, I've gained hands-on
+					<span class="text-highlight">
+						experience in client interactions, project management and deployment,
+					</span>
+					both internal and external. I've
+					<span class="text-highlight">
+						taken the lead
+					</span>
+					
+					on
+					<span class="text-highlight">
+						changing
+					</span>
+					our go-to tech
+					<span class="text-highlight">
+						stack
+					</span>
+					and template (from Rails to <a href="https://create.t3.gg/" target="_blank" rel="noopener noreferrer" class="underline">T3</a>) and in
+					<span class="text-highlight">
+						training
+					</span>
+					initiatives.
 				</p>
 			</div>
 			<div class="lg:row-span-2 flex flex-col row-start-5 lg:row-start-0 -z-10">
 
-				<Image class="hidden lg:block rounded-r-md aspect-square object-cover p-1 bg-secondary bg-opacity-40 max-h-80" src={foto_perfil} alt="" />
+				<Image class="hidden lg:block rounded-r-md aspect-square object-cover p-1 bg-secondary bg-opacity-40 max-h-80" src={foto_perfil} alt="A photo of me" />
 				
 				<div class="flex items-center justify-start h-10 lg:mt-2 lg:ml-1 -mt-1 -z-10">
 					<a class="rounded-r-md rounded-b-md cursor-pointer flex items-center justify-center bg-secondary h-full aspect-square outline-background outline focus-visible:outline-orange-400 z-10" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/artur-padovesi-piratelli-4516a5261/">
@@ -100,34 +103,15 @@ import foto_perfil from "../../public/foto_perfil.jpeg"
 			<h2 class="text-lg font-bold uppercase tracking-wider" id="experience">Experience</h2>
 		</div>
 		<div slot="content">
-			<ul class="max-w-[50ch] text-normal flex flex-col gap-4">
-				<li data-work-period="2023  -  2024" class="flex flex-col p-5 relative">
-					<div class="absolute right-full w-max text-sm font-bold tracking-wider text-primary">
-						2023  -  2024
-					</div>
-					<div class="text-highlight text-lg">
-						Projects Director · Struct
-					</div>
-					<div class="text-sm my-3">
-						Changed our go-to tech stack to a monorepo (t3-turbo).
-						<br>
-						Changed our development focus to frontend first, so client can validate faster and earlier.
-						<br>
-					</div>
-					<ul class="flex flex-wrap gap-2">
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">JavaScript</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">JavaScript</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">JavaScript</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">React</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">JavaScript</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">React</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">JavaScript</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">JavaScript</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">JavaScript</li>
-						<li class="text-xs px-3 py-2 bg-secondary bg-opacity-40 text-primary rounded-full">React</li>
-					</ul>
-				</li>
-			</ul>
+			<ExperienceCards experiences={experiences} />
+		</div>
+	</Section>
+	<Section>
+		<div slot="title">
+			<h2 class="text-lg font-bold uppercase tracking-wider" id="projects">Projects</h2>
+		</div>
+		<div slot="content">
+			Website not finished yet
 		</div>
 	</Section>
 </Layout>
