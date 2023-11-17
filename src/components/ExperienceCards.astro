@@ -13,12 +13,14 @@ const { experiences } = Astro.props;
 <ol class="max-w-[50ch] text-normal flex flex-col gap-4">
     {experiences.map((x) => (
         <li class="flex flex-col p-5 relative">
-            <div class="uppercase absolute right-full w-max text-xs font-bold tracking-wider text-primary">
-                {x.date.from} — {x.date.until ?? "present"}
-            </div>
             <h3 class="text-highlight font-medium">
                 {x.role} · {x.at}
             </h3>
+            <div class="uppercase md:absolute left-full w-max text-xs font-bold tracking-wider text-primary text-center">
+                {x.date.from}
+                — 
+                {x.date.until ?? "present"}
+            </div>
             <div class="mt-2">
                 <p class="text-sm tracking-wide">
                     <Content content={x.description} />
