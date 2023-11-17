@@ -4,7 +4,7 @@ on:
   # Ativa o workflow toda vez que você fizer um push para a branch `main`
   # Usando um nome de branch diferente? Modifique `main` para o nome da sua branch
   push:
-    branches: [main]
+    branches: [deploy/gh_pages]
   # Permite que esse workflow seja executado manualmente da aba "Actions" no GitHub.
   workflow_dispatch:
 
